@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Slider.MainPage">
+
+
+    <StackLayout BackgroundColor="#4CFCF8" Padding="10,100,10,10" >
+
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text = "Rhysin Villahermosa"
+                BindingContext="{x:Reference Name=Slidervalue}"   
+                FontSize="{Binding Path=Value}"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment='Center'
+                VerticalOptions="CenterAndExpand"/>
+
+            <Label Text = "Mark Neo Mamalias"
+                BindingContext="{x:Reference Name=Slidervalue}"
+                Rotation="{Binding Path=Value}"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <StackLayout  VerticalOptions="EndAndExpand" BackgroundColor="#177F7C" >
+            <Label Text="{Binding Value, StringFormat='{0:F0}'}"
+                   BindingContext="{x:Reference Name=Slidervalue}"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"
+                   FontSize="20"/>
+            <Slider x:Name="Slidervalue"  Maximum="150" 
+                    MaximumTrackColor="#177F7C"
+                    MinimumTrackColor="#4CFCF8"
+                    ThumbColor="NavajoWhite"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
